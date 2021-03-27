@@ -15,9 +15,15 @@ function createLI(text) {
     label.appendChild(checkbox);
     li.appendChild(label);
 
-    const button = document.createElement('button');
-    button.textContent = 'Remove';
-    li.appendChild(button);
+    const editButton = document.createElement('button');
+    editButton.textContent = 'Edit';
+    li.appendChild(editButton);
+
+    const removeButton = document.createElement('button');
+    removeButton.textContent = 'Remove';
+    li.appendChild(removeButton);
+
+    
     return li;
 }
 
@@ -50,10 +56,15 @@ ul.addEventListener('click', (e) => {
     const button = e.target;
     console.log("Button Tag Name: ", button.tagName);
     if (button.tagName === 'BUTTON') {
-        const button = e.target;
-        const listItem = button.parentNode;
-        const ul = listItem.parentNode;
-        ul.removeChild(listItem);
+        if(button.textContent === 'Remove') {
+            const button = e.target;
+            const listItem = button.parentNode;
+            const ul = listItem.parentNode;
+            ul.removeChild(listItem);
+        } else  if ((button.textContent === 'Edit') ) {
+            console.log(button);
+        }
+        
     }
 
 
