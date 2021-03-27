@@ -23,5 +23,13 @@ form.addEventListener('submit', (e) => {
 
 
 ul.addEventListener('change', (e)=> {
-    console.log(e.target.checked);
+    // console.log(e.target.checked);
+    const checkbox = e.target;
+    const checked = checkbox.checked;
+    const listItem = checkbox.parentNode.parentNode;
+    if (checked) {
+        listItem.className = 'responded';
+    } else {
+        listItem.className = '';
+    }
 });
