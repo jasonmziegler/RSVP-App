@@ -20,7 +20,7 @@ form.addEventListener('submit', (e) => {
     li.appendChild(label);
 
     const button = document.createElement('button');
-    button.textContent = 'remove';
+    button.textContent = 'Remove';
     li.appendChild(button);
     
     ul.appendChild(li);
@@ -38,3 +38,17 @@ ul.addEventListener('change', (e)=> {
         listItem.className = '';
     }
 });
+
+
+ul.addEventListener('click', (e) => {
+    const button = e.target;
+    console.log("Button Tag Name: ", button.tagName);
+    if (button.tagName === 'BUTTON') {
+        const button = e.target;
+        const listItem = button.parentNode;
+        const ul = listItem.parentNode;
+        ul.removeChild(listItem);
+    }
+
+
+})
